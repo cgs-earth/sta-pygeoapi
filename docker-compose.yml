@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  pygeoapi:
+    build: 
+      # context: brgm
+      context: usgs
+    environment:
+      - PYGEOAPI_URL=http://localhost:5000
+    ports:
+      - 5000:80
