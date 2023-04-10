@@ -93,11 +93,7 @@ resources:
       - SensorThings
       - USGS
     linked-data:
-      context:
-        - sosa: "http://www.w3.org/ns/sosa/"
-          ssn: "http://www.w3.org/ns/ssn/"
-          Datastreams: sosa:ObservationCollection
-          name: schema:name
+      item_template: usgs-hydrolocation.j2
     links:
       - type: application/html
         rel: canonical
@@ -115,7 +111,6 @@ resources:
       - type: feature
         name: SensorThings
         data: https://labs.waterdata.usgs.gov/sta/v1.1/Things
-        intralink: true
   Datastreams-USGS:
     type: collection
     title: USGS Datastreams
@@ -294,11 +289,7 @@ resources:
       - SensorThings
       - ORNL
     linked-data:
-      context:
-        - sosa: "http://www.w3.org/ns/sosa/"
-          ssn: "http://www.w3.org/ns/ssn/"
-          Datastreams: sosa:ObservationCollection
-          name: schema:name
+      item_template: ornl-hydrolocation.j2
     links:
       - type: application/html
         rel: canonical
@@ -316,7 +307,6 @@ resources:
       - type: feature
         name: SensorThings
         data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Things
-        intralink: true
   Datastreams-ORNL:
     type: collection
     title: ORNL Datastreams

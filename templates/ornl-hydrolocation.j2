@@ -1,0 +1,72 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "id": "@id",
+            "type": "@type",
+            "gsp": "http://www.opengis.net/ont/geosparql#",
+            "sosa": "http://www.w3.org/ns/sosa/",
+            "ssn": "http://www.w3.org/ns/ssn/",
+            "data": "sosa:isFeatureOfInterestOf",
+            "provider": "schema:provider",
+            "hyf": "https://www.opengis.net/def/schema/hy_features/hyf/",
+            "ts_spacing": "https://odm2.github.io/ODM2/schemas/ODM2_Current/columns/ODM2Results_TimeSeriesResults_IntendedTimeSpacing"
+        }
+    ],
+    "type": [
+        "schema:Place",
+        "sosa:FeatureOfInterest",
+        "hyf:HY_HydrometricFeature",
+        "hyf:HY_HydroLocation"
+    ],
+    "hyf:HY_HydroLocationType": "dam",
+    "id": "https://geoconnex.us/usbr/rise/locations/{{ data.id }}",
+    "schema:provider": "https://rise.usbr.gov",
+    "schema:name": "{{ data.name }}",
+    "schema:description": "{{ data.name }}",
+    "data": [
+        {% for d in data.Datastreams  -%}
+            {
+                "@type": "sosa:ObservationCollection",
+                "schema:name": "{{ d.name }}",
+                "sosa:observedProperty": {
+                    "@id": "http://vocabulary.odm2.org/variablename/streamflow/",
+                    "name": "{{ d.ObservedProperty.name }}"
+                },
+                "sosa:madeBySensor": {
+                    "@type": "Streamgage",
+                    "name": "USGS Sensor"
+                },
+                "schema:url": "{{ d["@iot.selfLink"] }}",
+                "phenomenonTime": "{{ d.phenomenonTime }}",
+                "unitOfMeasurement": "https://qudt.org/vocab/unit/FT3-PER-SEC",
+                "ts_spacing": "PT1D"
+            }
+            {%- if not loop.last -%}
+            ,
+            {%- endif -%}
+        {% endfor  -%}
+    ],
+    "hyf:referencedPosition": [
+        {
+            "hyf:HY_IndirectPosition": {
+                "hyf:distanceExpression": {
+                    "hyf:HY_DistanceFromReferent": {
+                        "hyf:interpolative": 31.7648
+                    }
+                },
+                "hyf:distanceDescription": {
+                    "hyf:HY_DistanceDescription": "upstream"
+                },
+                "hyf:linearElement": "https://geoconnex.us/nhdplusv2/reachcode/10190004000014"
+            }
+        },
+        {
+            "hyf:HY_IndirectPosition": {
+                "hyf:linearElement": "https://geoconnex.us/ref/mainstems/461532"
+            }
+        }
+    ],
+    "schema:geo": {{ data['schema:geo'] | to_json | safe }},
+    "gsp:hasGeometry": {{ data['gsp:hasGeometry'] | to_json }}
+}
