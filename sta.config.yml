@@ -87,7 +87,7 @@ resources:
   USGS/Things:
     type: collection
     title: USGS Things
-    description: USGS SensorThings API Things
+    description: United States Geological Survey SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -114,7 +114,7 @@ resources:
   USGS/Datastreams:
     type: collection
     title: USGS Datastreams
-    description: USGS SensorThings API Datastreams
+    description: United States Geological Survey SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -148,7 +148,7 @@ resources:
   USGS/Observations:
     type: collection
     title: USGS Observations
-    description: USGS SensorThings API Observations
+    description: United States Geological Survey SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
@@ -283,7 +283,7 @@ resources:
   ORNL/Things:
     type: collection
     title: ORNL Things
-    description: ORNL SensorThings API Things
+    description: Oak Ridge National Laboratory SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -310,7 +310,7 @@ resources:
   ORNL/Datastreams:
     type: collection
     title: ORNL Datastreams
-    description: ORNL SensorThings API Datastreams
+    description: Oak Ridge National Laboratory SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -344,7 +344,7 @@ resources:
   ORNL/Observations:
     type: collection
     title: ORNL Observations
-    description: ORNL SensorThings API Observations
+    description: Oak Ridge National Laboratory SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
@@ -377,7 +377,7 @@ resources:
   NMWDI/Things:
     type: collection
     title: NMWDI Things
-    description: NMWDI SensorThings API Things
+    description: New Mexico Water Data Initiative SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -409,7 +409,7 @@ resources:
   NMWDI/Datastreams:
     type: collection
     title: NMWDI Datastreams
-    description: NMWDI SensorThings API Datastreams
+    description: New Mexico Water Data Initiative SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -443,7 +443,7 @@ resources:
   NMWDI/Observations:
     type: collection
     title: NMWDI Observations
-    description: NMWDI SensorThings API Observations
+    description: New Mexico Water Data Initiative SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
@@ -476,7 +476,7 @@ resources:
   NMSDWIS/Things:
     type: collection
     title: NMSDWIS Things
-    description: NMSDWIS SensorThings API Things
+    description: New Mexico Safe Drinking Water Information System SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -508,7 +508,7 @@ resources:
   NMSDWIS/Datastreams:
     type: collection
     title: NMSDWIS Datastreams
-    description: NMSDWIS SensorThings API Datastreams
+    description: New Mexico Safe Drinking Water Information System SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -542,11 +542,11 @@ resources:
   NMSDWIS/Observations:
     type: collection
     title: NMSDWIS Observations
-    description: NMSDWIS SensorThings API Observations
+    description: New Mexico Safe Drinking Water Information System SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
-      - NMWDI
+      - NMSDWIS
     linked-data:
       context:
         - sosa: http://www.w3.org/ns/sosa/
