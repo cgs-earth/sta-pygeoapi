@@ -84,10 +84,10 @@ metadata:
     role: pointOfContact
 
 resources:
-  Things-USGS:
+  USGS/Things:
     type: collection
     title: USGS Things
-    description: USGS SensorThings API Things
+    description: United States Geological Survey SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -111,10 +111,10 @@ resources:
       - type: feature
         name: SensorThings
         data: https://labs.waterdata.usgs.gov/sta/v1.1/Things
-  Datastreams-USGS:
+  USGS/Datastreams:
     type: collection
     title: USGS Datastreams
-    description: USGS SensorThings API Datastreams
+    description: United States Geological Survey SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -145,10 +145,10 @@ resources:
         data: https://labs.waterdata.usgs.gov/sta/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
-  Observations-USGS:
+  USGS/Observations:
     type: collection
     title: USGS Observations
-    description: USGS SensorThings API Observations
+    description: United States Geological Survey SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
@@ -280,10 +280,10 @@ resources:
   #       entity: Observations
   #       time_field: phenomenonTime
   #       intralink: true
-  Things-ORNL:
+  ORNL/Things:
     type: collection
     title: ORNL Things
-    description: ORNL SensorThings API Things
+    description: Oak Ridge National Laboratory SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -307,10 +307,10 @@ resources:
       - type: feature
         name: SensorThings
         data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Things
-  Datastreams-ORNL:
+  ORNL/Datastreams:
     type: collection
     title: ORNL Datastreams
-    description: ORNL SensorThings API Datastreams
+    description: Oak Ridge National Laboratory SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -341,10 +341,10 @@ resources:
         data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
-  Observations-ORNL:
+  ORNL/Observations:
     type: collection
     title: ORNL Observations
-    description: ORNL SensorThings API Observations
+    description: Oak Ridge National Laboratory SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
@@ -374,10 +374,10 @@ resources:
         data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Observations
         time_field: phenomenonTime
         intralink: true
-  Things-NMWDI:
+  NMWDI/Things:
     type: collection
     title: NMWDI Things
-    description: NMWDI SensorThings API Things
+    description: New Mexico Water Data Initiative SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -406,10 +406,10 @@ resources:
         name: SensorThings
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things
         intralink: true
-  Datastreams-NMWDI:
+  NMWDI/Datastreams:
     type: collection
     title: NMWDI Datastreams
-    description: NMWDI SensorThings API Datastreams
+    description: New Mexico Water Data Initiative SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -440,10 +440,10 @@ resources:
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
-  Observations-NMWDI:
+  NMWDI/Observations:
     type: collection
     title: NMWDI Observations
-    description: NMWDI SensorThings API Observations
+    description: New Mexico Water Data Initiative SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
@@ -471,5 +471,119 @@ resources:
       - type: feature
         name: SensorThings
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Observations
+        time_field: phenomenonTime
+        intralink: true
+  NMSDWIS/Things:
+    type: collection
+    title: NMSDWIS Things
+    description: New Mexico Safe Drinking Water Information System SensorThings API Things
+    keywords:
+      - Things
+      - SensorThings
+      - NMSDWIS
+    linked-data:
+      context:
+        - sosa: "http://www.w3.org/ns/sosa/"
+          ssn: "http://www.w3.org/ns/ssn/"
+          Datastreams: sosa:ObservationCollection
+          name: schema:name
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://dww.water.net.env.nm.gov/NMDWW/
+        hreflang: en-US
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/sdwis
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-109.050173,31.332301,-103.001964,37.000232]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: SensorThings
+        data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Things
+        intralink: true
+  NMSDWIS/Datastreams:
+    type: collection
+    title: NMSDWIS Datastreams
+    description: New Mexico Safe Drinking Water Information System SensorThings API Datastreams
+    keywords:
+      - Datastreams
+      - SensorThings
+      - NMSDWIS
+    linked-data:
+      context:
+        - sosa: http://www.w3.org/ns/sosa/
+          ssn: http://www.w3.org/ns/ssn/
+          Observations: sosa:hasMember
+          Thing: sosa:hasFeatureOfInterest
+          name: schema:name
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://dww.water.net.env.nm.gov/NMDWW/
+        hreflang: en-US
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/sdwis
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-109.050173,31.332301,-103.001964,37.000232]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: SensorThings
+        data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams
+        time_field: phenomenonTime
+        intralink: true
+  NMSDWIS/Observations:
+    type: collection
+    title: NMSDWIS Observations
+    description: New Mexico Safe Drinking Water Information System SensorThings API Observations
+    keywords:
+      - Observations
+      - SensorThings
+      - NMSDWIS
+    linked-data:
+      context:
+        - sosa: http://www.w3.org/ns/sosa/
+          ssn: http://www.w3.org/ns/ssn/
+          Datastream: sosa:isMemberOf
+          name: schema:name
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://dww.water.net.env.nm.gov/NMDWW/
+        hreflang: en-US
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/sdwis
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-109.050173,31.332301,-103.001964,37.000232]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: SensorThings
+        data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Observations
         time_field: phenomenonTime
         intralink: true
