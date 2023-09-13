@@ -473,3 +473,102 @@ resources:
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Observations
         time_field: phenomenonTime
         intralink: true
+  Things-NMSDWIS:
+    type: collection
+    title: NMSDWIS Things
+    description: NMSDWIS SensorThings API Things
+    keywords:
+      - Things
+      - SensorThings
+      - NMSDWIS
+    linked-data:
+      context:
+        - sosa: "http://www.w3.org/ns/sosa/"
+          ssn: "http://www.w3.org/ns/ssn/"
+          Datastreams: sosa:ObservationCollection
+          name: schema:name
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-109.050173,31.332301,-103.001964,37.000232]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: SensorThings
+        data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Things
+        intralink: true
+  Datastreams-NMSDWIS:
+    type: collection
+    title: NMSDWIS Datastreams
+    description: NMSDWIS SensorThings API Datastreams
+    keywords:
+      - Datastreams
+      - SensorThings
+      - NMSDWIS
+    linked-data:
+      context:
+        - sosa: http://www.w3.org/ns/sosa/
+          ssn: http://www.w3.org/ns/ssn/
+          Observations: sosa:hasMember
+          Thing: sosa:hasFeatureOfInterest
+          name: schema:name
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-109.050173,31.332301,-103.001964,37.000232]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: SensorThings
+        data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams
+        time_field: phenomenonTime
+        intralink: true
+  Observations-NMSDWIS:
+    type: collection
+    title: NMSDWIS Observations
+    description: NMSDWIS SensorThings API Observations
+    keywords:
+      - Observations
+      - SensorThings
+      - NMWDI
+    linked-data:
+      context:
+        - sosa: http://www.w3.org/ns/sosa/
+          ssn: http://www.w3.org/ns/ssn/
+          Datastream: sosa:isMemberOf
+          name: schema:name
+    links:
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
+        hreflang: en-US
+    extents:
+      spatial:
+        bbox: [-109.050173,31.332301,-103.001964,37.000232]
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      temporal:
+        begin: null
+        end: null
+    providers:
+      - type: feature
+        name: SensorThings
+        data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Observations
+        time_field: phenomenonTime
+        intralink: true
