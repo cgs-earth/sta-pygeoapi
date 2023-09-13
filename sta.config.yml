@@ -491,7 +491,12 @@ resources:
       - type: application/html
         rel: canonical
         title: data source
-        href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
+        href: https://dww.water.net.env.nm.gov/NMDWW/
+        hreflang: en-US
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/sdwis
         hreflang: en-US
     extents:
       spatial:
@@ -524,7 +529,12 @@ resources:
       - type: application/html
         rel: canonical
         title: data source
-        href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
+        href: https://dww.water.net.env.nm.gov/NMDWW/
+        hreflang: en-US
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/sdwis
         hreflang: en-US
     extents:
       spatial:
@@ -557,7 +567,12 @@ resources:
       - type: application/html
         rel: canonical
         title: data source
-        href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
+        href: https://dww.water.net.env.nm.gov/NMDWW/
+        hreflang: en-US
+      - type: application/html
+        rel: canonical
+        title: data source
+        href: https://catalog.newmexicowaterdata.org/dataset/sdwis
         hreflang: en-US
     extents:
       spatial:
