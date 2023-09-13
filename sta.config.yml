@@ -84,7 +84,7 @@ metadata:
     role: pointOfContact
 
 resources:
-  Things-USGS:
+  USGS/Things:
     type: collection
     title: USGS Things
     description: USGS SensorThings API Things
@@ -111,7 +111,7 @@ resources:
       - type: feature
         name: SensorThings
         data: https://labs.waterdata.usgs.gov/sta/v1.1/Things
-  Datastreams-USGS:
+  USGS/Datastreams:
     type: collection
     title: USGS Datastreams
     description: USGS SensorThings API Datastreams
@@ -145,7 +145,7 @@ resources:
         data: https://labs.waterdata.usgs.gov/sta/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
-  Observations-USGS:
+  USGS/Observations:
     type: collection
     title: USGS Observations
     description: USGS SensorThings API Observations
@@ -280,7 +280,7 @@ resources:
   #       entity: Observations
   #       time_field: phenomenonTime
   #       intralink: true
-  Things-ORNL:
+  ORNL/Things:
     type: collection
     title: ORNL Things
     description: ORNL SensorThings API Things
@@ -307,7 +307,7 @@ resources:
       - type: feature
         name: SensorThings
         data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Things
-  Datastreams-ORNL:
+  ORNL/Datastreams:
     type: collection
     title: ORNL Datastreams
     description: ORNL SensorThings API Datastreams
@@ -341,7 +341,7 @@ resources:
         data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
-  Observations-ORNL:
+  ORNL/Observations:
     type: collection
     title: ORNL Observations
     description: ORNL SensorThings API Observations
@@ -374,7 +374,7 @@ resources:
         data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Observations
         time_field: phenomenonTime
         intralink: true
-  Things-NMWDI:
+  NMWDI/Things:
     type: collection
     title: NMWDI Things
     description: NMWDI SensorThings API Things
@@ -406,7 +406,7 @@ resources:
         name: SensorThings
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things
         intralink: true
-  Datastreams-NMWDI:
+  NMWDI/Datastreams:
     type: collection
     title: NMWDI Datastreams
     description: NMWDI SensorThings API Datastreams
@@ -440,7 +440,7 @@ resources:
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
-  Observations-NMWDI:
+  NMWDI/Observations:
     type: collection
     title: NMWDI Observations
     description: NMWDI SensorThings API Observations
@@ -473,7 +473,7 @@ resources:
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Observations
         time_field: phenomenonTime
         intralink: true
-  Things-NMSDWIS:
+  NMSDWIS/Things:
     type: collection
     title: NMSDWIS Things
     description: NMSDWIS SensorThings API Things
@@ -505,7 +505,7 @@ resources:
         name: SensorThings
         data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Things
         intralink: true
-  Datastreams-NMSDWIS:
+  NMSDWIS/Datastreams:
     type: collection
     title: NMSDWIS Datastreams
     description: NMSDWIS SensorThings API Datastreams
@@ -539,7 +539,7 @@ resources:
         data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
-  Observations-NMSDWIS:
+  NMSDWIS/Observations:
     type: collection
     title: NMSDWIS Observations
     description: NMSDWIS SensorThings API Observations
