@@ -587,8 +587,8 @@ resources:
         data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Observations
   WQIE-WQP/Things:
     type: collection
-    title: NMSDWIS Things
-    description: New Mexico Safe Drinking Water Information System SensorThings API Things
+    title: WQP Water Quality Interoperability Experiment Monitoring Locations
+    description: WQP Water Quality Interoperability Experiment SensorThings API Things
     keywords:
       - Things
       - SensorThings
@@ -624,8 +624,8 @@ resources:
         intralink: true
   WQIE-WQP/Datastreams:
     type: collection
-    title: NMSDWIS Datastreams
-    description: New Mexico Safe Drinking Water Information System SensorThings API Datastreams
+    title: WQP Water Quality Interoperability Experiment Observations Datasets
+    description: WQP Water Quality Interoperability Experiment SensorThings API Datastreams
     keywords:
       - Datastreams
       - SensorThings
@@ -663,8 +663,8 @@ resources:
         intralink: true
   WQIE-WQP/Observations:
     type: collection
-    title: NMSDWIS Observations
-    description: New Mexico Safe Drinking Water Information System SensorThings API Observations
+    title: WQP Water Quality Interoperability Experiment Observations
+    description: WQP Water Quality Interoperability Experiment SensorThings API Observations
     keywords:
       - Observations
       - SensorThings
