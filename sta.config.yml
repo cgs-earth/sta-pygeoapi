@@ -597,7 +597,7 @@ resources:
       context:
         - sosa: "http://www.w3.org/ns/sosa/"
           ssn: "http://www.w3.org/ns/ssn/"
-          Datastreams: sosa:ObservationCollection
+          Datastreams: schema:subjectOf
           name: schema:name
     links:
       - type: application/html
@@ -621,7 +621,7 @@ resources:
       - type: feature
         name: SensorThings
         data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/Things
-        intralink: true
+        intralink: false
   WQIE-WQP/Datastreams:
     type: collection
     title: WQP Water Quality Interoperability Experiment Observations Datasets
