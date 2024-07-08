@@ -92,8 +92,8 @@ resources:
       - Things
       - SensorThings
       - USGS
-    linked-data:
-      item_template: usgs-hydrolocation.j2
+    # linked-data:
+    #   item_template: usgs-hydrolocation.j2
     links:
       - type: application/html
         rel: canonical
@@ -288,8 +288,8 @@ resources:
       - Things
       - SensorThings
       - ORNL
-    linked-data:
-      item_template: ornl-hydrolocation.j2
+    # linked-data:
+    #   item_template: ornl-hydrolocation.j2
     links:
       - type: application/html
         rel: canonical
