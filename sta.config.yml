@@ -306,7 +306,7 @@ resources:
     providers:
       - type: feature
         name: SensorThings
-        data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Things
+        data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Things
   ORNL/Datastreams:
     type: collection
     title: ORNL Datastreams
@@ -338,7 +338,7 @@ resources:
     providers:
       - type: feature
         name: SensorThings
-        data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Datastreams
+        data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Datastreams
         time_field: phenomenonTime
         intralink: true
   ORNL/Observations:
@@ -371,7 +371,7 @@ resources:
     providers:
       - type: feature
         name: SensorThings
-        data: https://ornl-demo.geoconnex.dev/FROST-Server/v1.1/Observations
+        data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Observations
         time_field: phenomenonTime
         intralink: true
   NMWDI/Things:
