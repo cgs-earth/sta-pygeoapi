@@ -1,4 +1,4 @@
-FROM geopython/pygeoapi:latest
+FROM internetofwater/pygeoapi-plugins:edr
 
 COPY sta.config.yml /pygeoapi/local.config.yml
 
