@@ -173,6 +173,7 @@ resources:
       - type: feature
         name: SensorThings
         data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Things
+        name_field: name
 
   # RISE/Datastreams:
   #   type: collection
@@ -243,7 +244,7 @@ resources:
       - type: feature
         name: SensorThings
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things
-        intralink: true
+        name_field: name
 
   # NMWDI/Datastreams:
   #   type: collection
@@ -347,7 +348,7 @@ resources:
       - type: feature
         name: SensorThings
         data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Things
-        intralink: true
+        name_field: name
 
   # NMSDWIS/Datastreams:
   #   type: collection
@@ -453,7 +454,7 @@ resources:
       - type: feature
         name: SensorThings
         data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/Things
-        intralink: false
+        name_field: name
 
   # WQIE-WQP/Datastreams:
   #   type: collection
