@@ -6,3 +6,8 @@ services:
       - PYGEOAPI_URL=http://localhost:5000
     ports:
       - 5000:80
+    volumes:
+    # We have to mount these all independently since if we mount the entire directory, it ove
+      - ./templates/ornl-hydrolocation.j2:/pygeoapi/pygeoapi/templates/ornl-hydrolocation.j2
+      - ./templates/usgs-hydrolocation.j2:/pygeoapi/pygeoapi/templates/usgs-hydrolocation.j2
+      - ./templates/usgs-location-oriented.j2:/pygeoapi/pygeoapi/templates/usgs-location-oriented.j2
