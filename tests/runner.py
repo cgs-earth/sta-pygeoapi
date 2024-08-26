@@ -27,8 +27,7 @@ for template_filename in os.listdir(template_dir):
         template_name = template_filename.replace('.j2', '')
         
         # Set the corresponding test directory
-        test_dir = os.path.join('test', template_name)
-        print(os.path.abspath(test_dir))
+        test_dir = os.path.abspath(os.path.join('tests', template_name))
 
         if not os.path.isdir(test_dir):
             print(f"No test directory found for template {template_name}")

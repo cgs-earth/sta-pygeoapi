@@ -1,6 +1,6 @@
 name: Run Jinja2 Tests
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   run-tests:
@@ -23,7 +23,3 @@ jobs:
       - name: Run tests
         run: |
           python ./tests/runner.py
-
-    # this is not a verified test so we want a neutrally response 
-      - name: End workflow neutrally
-        run: echo "Workflow finished."
