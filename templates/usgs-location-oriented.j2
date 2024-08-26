@@ -145,12 +145,12 @@
 
               "measurementMethod": {
                 
-                {# Can't say if it is a gaging station or another type since this is not provided in the raw jsonld#}
-                {# "url": "https://doi.org/10.3133/tm3A8" #}
+                {# Can't say if it is a gaging station or another type since this is not provided in the raw jsonld.
+                Also do not have enough info to link to a remote URL for the doi #}
+                {# "url": "https://doi.org/10.3133/tm3A8", #}
 
                 "name": "{{ typeOfData }} Measurements",
                 "publisher": "U.S. Geological Survey"
-                {# "url": "https://doi.org/10.3133/tm3A8" #}
               }
             },
             {% if stream['observedArea'] is defined and stream['observedArea']['phenomenonTime'] %}
