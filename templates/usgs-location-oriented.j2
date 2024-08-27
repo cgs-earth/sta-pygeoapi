@@ -153,8 +153,8 @@
                 "publisher": "U.S. Geological Survey"
               }
             },
-            {% if stream['observedArea'] is defined and stream['observedArea']['phenomenonTime'] %}
-              "temporalCoverage": "{{ stream['observedArea']['phenomenonTime'] }}",
+            {% if stream['phenomenonTime']  %}
+              "temporalCoverage": "{{ stream['phenomenonTime'] }}",
             {% endif %}
 
             {# dc and dcat are not provided in the raw jsonld, must be hardcoded #}
