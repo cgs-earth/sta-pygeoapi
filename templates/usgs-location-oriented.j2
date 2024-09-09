@@ -77,7 +77,7 @@
       "hyf:HY_IndirectPosition": {
          "hyf:linearElement": {
           {# Assumes we can hard code 0 since this template is location-oriented and thus all date is related to one location#}
-          "@id": "https://geoconnex.us/ref/mainstems/{{ data['Locations'][0]['properties']['mainstemURL'] }}"
+          "@id": "{{ data['Locations'][0]['properties']['mainstemURL'] }}"
         }
       }
     },
