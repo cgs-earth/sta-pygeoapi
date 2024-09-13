@@ -51,7 +51,7 @@ server:
   # ogc_schemas_location: /opt/schemas.opengis.net
 
 logging:
-  level: DEBUG
+  level: ERROR
 
 metadata:
   identification:
@@ -154,7 +154,7 @@ resources:
     title: RISE EDR
     description: Reclamation Information Sharing Envionment SensorThings API EDR
     keywords:
-      - Things
+      - EDR
       - SensorThings
       - RISE
     links:
@@ -256,14 +256,14 @@ resources:
         data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/
         entity: Things
         title_field: name
-  # WQIE-WQP/Things:
+  # WQIE-WQP:
   #   type: collection
-  #   title: WQP Water Quality Interoperability Experiment Monitoring Locations
-  #   description: WQP Water Quality Interoperability Experiment SensorThings API Things
+  #   title: WQIE-WQP EDR
+  #   description: WQP Water Quality Interoperability Experiment SensorThings API EDR
   #   keywords:
-  #     - Things
+  #     - EDR
   #     - SensorThings
-  #     - NMSDWIS
+  #     - WQIE
   #   linked-data:
   #     context:
   #       - sosa: "http://www.w3.org/ns/sosa/"
@@ -274,22 +274,21 @@ resources:
   #     - type: application/html
   #       rel: canonical
   #       title: data source
-  #       href: https://dww.water.net.env.nm.gov/NMDWW/
-  #       hreflang: en-US
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/sdwis
+  #       href: https://www.waterqualitydata.us/
   #       hreflang: en-US
   #   extents:
   #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
+  #       bbox: [-170, 15, -51, 72]
   #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
   #     temporal:
   #       begin: null
   #       end: null
   #   providers:
+  #     - type: edr
+  #       name: pygeoapi_plugins.provider.sensorthings_edr.SensorThingsEDRProvider
+  #       data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/
   #     - type: feature
   #       name: SensorThings
-  #       data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/Things
+  #       data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/
+  #       entity: Things
   #       intralink: false
