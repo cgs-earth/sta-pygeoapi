@@ -41,7 +41,9 @@ server:
     - fr-CA
   # cors: true
   pretty_print: true
-  limit: 100
+  limits: 
+    default_items: 100
+    max_items: 50000
   map:
     url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
     attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>'
@@ -427,34 +429,26 @@ resources:
   #       name: SensorThings
   #       data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Observations
 
-  WQIE/Things:
+  WQP/Things:
     type: collection
-    title: WQIE Things
-    description: WQP Water Quality Interoperability Experiment SensorThings API Things
+    title: WQP Things
+    description: Water Quality Portal SensorThings API Things
     keywords: *things-keywords
     linked-data:
-      context:
-        - sosa: "http://www.w3.org/ns/sosa/"
-          ssn: "http://www.w3.org/ns/ssn/"
-          Datastreams: schema:subjectOf
-          name: schema:name
+      item_template: wqp-location-oriented.j2
     links:
       - type: application/html
         rel: canonical
         title: data source
-        href: https://dww.water.net.env.nm.gov/NMDWW/
-        hreflang: en-US
-      - type: application/html
-        rel: canonical
-        title: data source
-        href: https://catalog.newmexicowaterdata.org/dataset/sdwis
+        href: https://www.waterqualitydata.us
         hreflang: en-US
     extents: *us-extents
     providers:
       - type: feature
         name: SensorThings
-        data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/Things
+        data: https://wqp.internetofwater.app/FROST-Server/v1.1/Things
         name_field: name
+        expand: Locations,Datastreams/ObservedProperty
 
   # WQIE-WQP/Datastreams:
   #   type: collection
