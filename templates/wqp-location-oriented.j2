@@ -21,12 +21,8 @@
     "@id": "{{ data['@id'] }}",
     "@type": [
       "hyf:HY_HydrometricFeature",
-      "hyf:HY_HydroLocation",
-      {% if data['monitoringLocationType'] %}
-      "locType:{{ data['monitoringLocationType'] }}"
-      {% endif %}
+      "hyf:HY_HydroLocation"
     ],
-    
     
     {%- if data['monitoringLocationType'] %}
       "hyf:HydroLocationType": "{{ data['monitoringLocationType'] }}",
@@ -78,6 +74,14 @@
     "hyf:containingCatchment": [
       {
         "@id": "{{ data['hu08'] }}"
+      }
+    ],
+    {% endif -%}
+
+    {%- if data["county"] -%}
+    "gsp:sfWithin": [
+      {
+        "@id": "{{ data['county'] }}"
       }
     ],
     {% endif -%}
