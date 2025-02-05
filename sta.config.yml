@@ -448,6 +448,7 @@ resources:
         name: SensorThings
         data: https://wqp.internetofwater.app/FROST-Server/v1.1/Things
         name_field: name
+        uri_field: uri
         expand: Locations,Datastreams/ObservedProperty
 
   # WQIE-WQP/Datastreams:
