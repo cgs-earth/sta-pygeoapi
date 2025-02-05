@@ -78,11 +78,15 @@
     ],
     {% endif -%}
 
-    {%- if data["county"] -%}
+    {%- if data["county"] or data["state"] -%}
     "gsp:sfWithin": [
-      {
-        "@id": "{{ data['county'] }}"
-      }
+      {%- if data["county"] -%}
+        { "@id": "{{ data['county'] }}" }
+        {%- if data["state"] -%}, {%- endif -%}
+      {%- endif -%}
+      {%- if data["state"] -%}
+        { "@id": "{{ data['state'] }}" }
+      {%- endif -%}
     ],
     {% endif -%}
 
