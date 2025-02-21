@@ -18,18 +18,22 @@
       "ssn": "http://www.w3.org/ns/ssn/",
       "ssn-system": "http://www.w3.org/ns/ssn/systems/"
     },
-    "@id": "{{ data['@id'] }}",
+    "@id": "https://geoconnex.us/iow/usgs/sta/{{ data['name'] }}",
     "@type": [
       "hyf:HY_HydrometricFeature",
-      "hyf:HY_HydroLocation",
-      {% if data['monitoringLocationType'] %}
-      "locType:{{ data['monitoringLocationType'] }}"
+      "hyf:HY_HydroLocation"
+      {% if data['monitoringLocationType'] %},
+      {% set locTypes = data['monitoringLocationType'].replace(' ', '').split(',') %}
+      {% for type_ in locTypes %}
+      "locType:{{ type_ }}"
+      {% if not loop.last %},{% endif %}
+      {% endfor %}
       {% endif %}
     ],
     
     
     {% if data['monitoringLocationType'] %}
-      "hyf:HydroLocationType": "{{ data['monitoringLocationType'] }}",
+      "hyf:HydroLocationType": "{{ locTypes[0] }}",
     {% endif %}
     
     {#Was told to not worry about changing this for time being, no way to get this without a geospatial query #}
@@ -169,7 +173,7 @@
 
                 {#`sites` is the same as the Thing id but the hyphen is replaced by a colon. if there is no hyphen, then you just pipe in the thing id  #}
                 {# We then need to remove the surrounding '' to make sure the query is properly formatted #}
-                "contentUrl": "https://waterservices.usgs.gov/nwis/iv/?sites={{data['id'] | replace("-", ":" ) | replace("'", "")}}&parameterCd={{ stream["properties"]["ParameterCode"] }}&format=rdb",
+                "contentUrl": "https://waterservices.usgs.gov/nwis/iv/?parameterCd={{ stream["properties"]["ParameterCode"] }}&sites={{data['id'] | replace("-", ":" ) | replace("'", "")}}&format=rdb",
                 "encodingFormat": [
                   "text/tab-separated-values"
                 ],
