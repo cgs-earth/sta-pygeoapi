@@ -1,0 +1,7 @@
+{   
+    // pygeoapi requires templates to have the jsonld extension
+    // but that conflicts with the jinja extension syntax highlighting
+    "files.associations": {
+        "*.jsonld": "jinja"
+    }
+}
