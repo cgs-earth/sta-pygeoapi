@@ -83,7 +83,7 @@ metadata:
 
 resources:
 
-  Oregon_Things:
+  Oregon/Things:
     type: "collection"
     title: "Oregon Things"
     description: "Oregon SensorThings API Things"
@@ -121,7 +121,7 @@ resources:
         title: "information"
         href: "https://gis.wrd.state.or.us/server/sdk/rest/index.html#/02ss00000029000000"
 
-  USGS_Things:
+  USGS/Things:
     type: collection
     title: USGS Things
     description: United States Geological Survey SensorThings API Things
@@ -149,7 +149,7 @@ resources:
         data: https://labs.waterdata.usgs.gov/sta/v1.1/Things
         name_field: name
 
-  RISE_Things:
+  RISE/Things:
     type: collection
     title: RISE Things
     description: Reclamation Information System SensorThings API Things
@@ -167,7 +167,7 @@ resources:
         data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Things
         name_field: name
 
-  NMWDI_Things:
+  NMWDI/Things:
     type: collection
     title: NMWDI Things
     description: New Mexico Water Data Initiative SensorThings API Things
@@ -197,7 +197,7 @@ resources:
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things
         name_field: name
 
-  WQP_Things:
+  WQP/Things:
     type: collection
     title: WQP Things
     description: Water Quality Portal SensorThings API Things
