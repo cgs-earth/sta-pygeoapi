@@ -42,7 +42,7 @@
       "description": "{{ data['locations'][0]['description'] }}",
     {% endif -%}
     "provider": {
-      "url": "https://www.waterqualitydata.us",
+      "url": "https://www.waterqualitydata.us/beta/",
       "@type": "GovernmentOrganization",
       "name": "{{ data['OrganizationFormalName'] }}"
     },
@@ -101,12 +101,12 @@
             {% endif -%}
 
             "provider": {
-                "url": "https://www.waterqualitydata.us",
+                "url": "https://www.waterqualitydata.us/beta/",
                 "@type": "GovernmentOrganization",
                 "name": "{{ data['OrganizationFormalName'] }}"
             },
             {%- if data['station_url'] %}
-            "url": "{{ data['station_url'] }}",
+            "url": "{{ data['station_url'] | replace('https://www.waterqualitydata.us/provider', 'https://www.waterqualitydata.us/beta/provider') }}",
             {% endif -%}
 
             "variableMeasured": {
@@ -137,11 +137,11 @@
               {
                 "@type": "DataDownload",
                 "name": "Water Quality Portal",
-                "contentUrl": "https://www.waterqualitydata.us/data/Result/search?siteid={{ id }}&CharacteristicName={{ stream['ObservedProperty']['name'] }}&mimeType=csv",
+                "contentUrl": "https://www.waterqualitydata.us/wqx3/Result/search?siteid={{ id }}&characteristicName={{ stream['ObservedProperty']['name'] }}&mimeType=csv&dataProfile=fullPhysChem",
                 "encodingFormat": [
                   "text/comma-separated-values"
                 ],
-                "dc:conformsTo": "https://www.waterqualitydata.us/webservices_documentation/"
+                "dc:conformsTo": "https://www.waterqualitydata.us/beta/webservices_documentation/"
               }
             ]
           }
