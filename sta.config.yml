@@ -47,10 +47,6 @@ server:
   map:
     url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
     attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>'
-  # templates:
-  # path: /path/to/Jinja2/templates
-  # static: /path/to/static/folder # css/js/img
-  # ogc_schemas_location: /opt/schemas.opengis.net
 
 logging:
   level: ERROR
@@ -86,6 +82,45 @@ metadata:
     role: pointOfContact
 
 resources:
+
+  Oregon/Things:
+    type: "collection"
+    title: "Oregon Things"
+    description: "Oregon SensorThings API Things"
+    keywords:
+      - "thing"
+      - "oregon"
+    templates:
+      path: /pygeoapi/pygeoapi/templates/jsonld/Oregon_Things
+    extents:
+      spatial:
+        bbox:
+          [
+            -124.55417836738366,
+            41.99161889477894,
+            -116.46390970729706,
+            46.26801803457034,
+          ]
+        crs: "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+    providers:
+      - type: "feature"
+        name: "SensorThings"
+        data: https://owdp-pilot.internetofwater.app/FROST-Server/v1.1/
+        entity: Things
+        id_field: "@iot.id"
+        title_field: "name"
+        expand: Locations,Datastreams/ObservedProperty
+        intralink: false
+    links:
+      - type: "text/html"
+        rel: "canonical"
+        title: "information"
+        href: "https://gis.wrd.state.or.us/server/rest/services"
+      - type: "text/html"
+        rel: "canonical"
+        title: "information"
+        href: "https://gis.wrd.state.or.us/server/sdk/rest/index.html#/02ss00000029000000"
+
   USGS/Things:
     type: collection
     title: USGS Things
@@ -93,8 +128,8 @@ resources:
     keywords: &things-keywords
       - Things
       - SensorThings
-    linked-data:
-      item_template: usgs-location-oriented.j2
+    templates:
+      path: /pygeoapi/pygeoapi/templates/jsonld/USGS_Things
     links: &usgs-links
       - type: application/html
         rel: canonical
@@ -114,51 +149,6 @@ resources:
         data: https://labs.waterdata.usgs.gov/sta/v1.1/Things
         name_field: name
 
-  # USGS/Datastreams:
-  #   type: collection
-  #   title: USGS Datastreams
-  #   description: United States Geological Survey SensorThings API Datastreams
-  #   keywords: &datastreams-keywords
-  #     - Datastreams
-  #     - SensorThings
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Observations: sosa:hasMember
-  #         Thing: sosa:hasFeatureOfInterest
-  #         name: schema:name
-  #   links: *usgs-links
-  #   extents: *us-extents
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://labs.waterdata.usgs.gov/sta/v1.1/Datastreams
-  #       time_field: phenomenonTime
-  #       intralink: true
-
-  # USGS/Observations:
-  #   type: collection
-  #   title: USGS Observations
-  #   description: United States Geological Survey SensorThings API Observations
-  #   keywords: &observations-keywords
-  #     - Observations
-  #     - SensorThings
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Datastream: sosa:isMemberOf
-  #         name: schema:name
-  #   links: *usgs-links
-  #   extents: *us-extents
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://labs.waterdata.usgs.gov/sta/v1.1/Observations
-  #       time_field: phenomenonTime
-  #       intralink: true
-
   RISE/Things:
     type: collection
     title: RISE Things
@@ -176,47 +166,6 @@ resources:
         name: SensorThings
         data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Things
         name_field: name
-
-  # RISE/Datastreams:
-  #   type: collection
-  #   title: RISE Datastreams
-  #   description: Reclamation Information System SensorThings API Datastreams
-  #   keywords: *datastreams-keywords
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Observations: sosa:hasMember
-  #         Thing: sosa:hasFeatureOfInterest
-  #         name: schema:name
-  #   links: *rise-links
-  #   extents: *us-extents
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Datastreams
-  #       time_field: phenomenonTime
-  #       intralink: true
-
-  # RISE/Observations:
-  #   type: collection
-  #   title: RISE Observations
-  #   description: Reclamation Information System SensorThings API Observations
-  #   keywords: *observations-keywords
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Datastream: sosa:isMemberOf
-  #         name: schema:name
-  #   links: *rise-links
-  #   extents: *us-extents
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://rise-sta.internetofwater.app/FROST-Server/v1.1/Observations
-  #       time_field: phenomenonTime
-  #       intralink: true
 
   NMWDI/Things:
     type: collection
@@ -248,194 +197,13 @@ resources:
         data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Things
         name_field: name
 
-  # NMWDI/Datastreams:
-  #   type: collection
-  #   title: NMWDI Datastreams
-  #   description: New Mexico Water Data Initiative SensorThings API Datastreams
-  #   keywords:
-  #     - Datastreams
-  #     - SensorThings
-  #     - NMWDI
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Observations: sosa:hasMember
-  #         Thing: sosa:hasFeatureOfInterest
-  #         name: schema:name
-  #   links:
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
-  #       hreflang: en-US
-  #   extents:
-  #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
-  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-  #     temporal:
-  #       begin: null
-  #       end: null
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams
-  #       time_field: phenomenonTime
-  #       intralink: true
-
-  # NMWDI/Observations:
-  #   type: collection
-  #   title: NMWDI Observations
-  #   description: New Mexico Water Data Initiative SensorThings API Observations
-  #   keywords:
-  #     - Observations
-  #     - SensorThings
-  #     - NMWDI
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Datastream: sosa:isMemberOf
-  #         name: schema:name
-  #   links:
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/collaborative-groundwater-monitoring-network
-  #       hreflang: en-US
-  #   extents:
-  #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
-  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-  #     temporal:
-  #       begin: null
-  #       end: null
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://st2.newmexicowaterdata.org/FROST-Server/v1.1/Observations
-  #       time_field: phenomenonTime
-  #       intralink: true
-
-  # NMSDWIS/Things:
-  #   type: collection
-  #   title: NMSDWIS Things
-  #   description: New Mexico Safe Drinking Water Information System SensorThings API Things
-  #   keywords: *things-keywords
-  #   linked-data:
-  #     context:
-  #       - sosa: "http://www.w3.org/ns/sosa/"
-  #         ssn: "http://www.w3.org/ns/ssn/"
-  #         Datastreams: sosa:ObservationCollection
-  #         name: schema:name
-  #   links:
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://dww.water.net.env.nm.gov/NMDWW/
-  #       hreflang: en-US
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/sdwis
-  #       hreflang: en-US
-  #   extents:
-  #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
-  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-  #     temporal:
-  #       begin: null
-  #       end: null
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Things
-  #       name_field: name
-
-  # NMSDWIS/Datastreams:
-  #   type: collection
-  #   title: NMSDWIS Datastreams
-  #   description: New Mexico Safe Drinking Water Information System SensorThings API Datastreams
-  #   keywords:
-  #     - Datastreams
-  #     - SensorThings
-  #     - NMSDWIS
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Observations: sosa:hasMember
-  #         Thing: sosa:hasFeatureOfInterest
-  #         name: schema:name
-  #   links:
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://dww.water.net.env.nm.gov/NMDWW/
-  #       hreflang: en-US
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/sdwis
-  #       hreflang: en-US
-  #   extents:
-  #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
-  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-  #     temporal:
-  #       begin: null
-  #       end: null
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Datastreams
-  #       time_field: phenomenonTime
-  #       intralink: true
-
-  # NMSDWIS/Observations:
-  #   type: collection
-  #   title: NMSDWIS Observations
-  #   description: New Mexico Safe Drinking Water Information System SensorThings API Observations
-  #   keywords:
-  #     - Observations
-  #     - SensorThings
-  #     - NMSDWIS
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Datastream: sosa:isMemberOf
-  #         name: schema:name
-  #   links:
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://dww.water.net.env.nm.gov/NMDWW/
-  #       hreflang: en-US
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/sdwis
-  #       hreflang: en-US
-  #   extents:
-  #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
-  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-  #     temporal:
-  #       begin: null
-  #       end: null
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://nmenv.newmexicowaterdata.org/FROST-Server/v1.1/Observations
-
   WQP/Things:
     type: collection
     title: WQP Things
     description: Water Quality Portal SensorThings API Things
     keywords: *things-keywords
-    linked-data:
-      item_template: wqp-location-oriented.j2
+    templates:
+      path: /pygeoapi/pygeoapi/templates/jsonld/WQP_Things
     links:
       - type: application/html
         rel: canonical
@@ -450,82 +218,3 @@ resources:
         name_field: name
         uri_field: uri
         expand: Locations,Datastreams/ObservedProperty
-
-  # WQIE-WQP/Datastreams:
-  #   type: collection
-  #   title: WQP Water Quality Interoperability Experiment Observations Datasets
-  #   description: WQP Water Quality Interoperability Experiment SensorThings API Datastreams
-  #   keywords:
-  #     - Datastreams
-  #     - SensorThings
-  #     - NMSDWIS
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Observations: sosa:hasMember
-  #         Thing: sosa:hasFeatureOfInterest
-  #         name: schema:name
-  #   links:
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://dww.water.net.env.nm.gov/NMDWW/
-  #       hreflang: en-US
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/sdwis
-  #       hreflang: en-US
-  #   extents:
-  #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
-  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-  #     temporal:
-  #       begin: null
-  #       end: null
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/Datastreams
-  #       time_field: phenomenonTime
-  #       intralink: true
-
-  # WQIE-WQP/Observations:
-  #   type: collection
-  #   title: WQP Water Quality Interoperability Experiment Observations
-  #   description: WQP Water Quality Interoperability Experiment SensorThings API Observations
-  #   keywords:
-  #     - Observations
-  #     - SensorThings
-  #     - NMSDWIS
-  #   linked-data:
-  #     context:
-  #       - sosa: http://www.w3.org/ns/sosa/
-  #         ssn: http://www.w3.org/ns/ssn/
-  #         Datastream: sosa:isMemberOf
-  #         name: schema:name
-  #   links:
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://dww.water.net.env.nm.gov/NMDWW/
-  #       hreflang: en-US
-  #     - type: application/html
-  #       rel: canonical
-  #       title: data source
-  #       href: https://catalog.newmexicowaterdata.org/dataset/sdwis
-  #       hreflang: en-US
-  #   extents:
-  #     spatial:
-  #       bbox: [-109.050173,31.332301,-103.001964,37.000232]
-  #       crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-  #     temporal:
-  #       begin: null
-  #       end: null
-  #   providers:
-  #     - type: feature
-  #       name: SensorThings
-  #       data: https://wqp.wqie.internetofwater.app/FROST-Server/v1.1/Observations
-  #       time_field: phenomenonTime
-  #       intralink: true
