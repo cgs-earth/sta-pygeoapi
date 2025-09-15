@@ -83,43 +83,43 @@ metadata:
 
 resources:
 
-  Oregon/Things:
-    type: "collection"
-    title: "Oregon Things"
-    description: "Oregon SensorThings API Things"
-    keywords:
-      - "thing"
-      - "oregon"
-    templates:
-      path: /pygeoapi/pygeoapi/templates/jsonld/Oregon_Things
-    extents:
-      spatial:
-        bbox:
-          [
-            -124.55417836738366,
-            41.99161889477894,
-            -116.46390970729706,
-            46.26801803457034,
-          ]
-        crs: "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
-    providers:
-      - type: "feature"
-        name: "SensorThings"
-        data: https://owdp-pilot.internetofwater.app/FROST-Server/v1.1/
-        entity: Things
-        id_field: "@iot.id"
-        title_field: "name"
-        expand: Locations,Datastreams/ObservedProperty
-        intralink: false
-    links:
-      - type: "text/html"
-        rel: "canonical"
-        title: "information"
-        href: "https://gis.wrd.state.or.us/server/rest/services"
-      - type: "text/html"
-        rel: "canonical"
-        title: "information"
-        href: "https://gis.wrd.state.or.us/server/sdk/rest/index.html#/02ss00000029000000"
+  # Oregon/Things:
+  #   type: "collection"
+  #   title: "Oregon Things"
+  #   description: "Oregon SensorThings API Things"
+  #   keywords:
+  #     - "thing"
+  #     - "oregon"
+  #   templates:
+  #     path: /pygeoapi/pygeoapi/templates/jsonld/Oregon_Things
+  #   extents:
+  #     spatial:
+  #       bbox:
+  #         [
+  #           -124.55417836738366,
+  #           41.99161889477894,
+  #           -116.46390970729706,
+  #           46.26801803457034,
+  #         ]
+  #       crs: "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+  #   providers:
+  #     - type: "feature"
+  #       name: "SensorThings"
+  #       data: https://owdp-pilot.internetofwater.app/FROST-Server/v1.1/
+  #       entity: Things
+  #       id_field: "@iot.id"
+  #       title_field: "name"
+  #       expand: Locations,Datastreams/ObservedProperty
+  #       intralink: false
+  #   links:
+  #     - type: "text/html"
+  #       rel: "canonical"
+  #       title: "information"
+  #       href: "https://gis.wrd.state.or.us/server/rest/services"
+  #     - type: "text/html"
+  #       rel: "canonical"
+  #       title: "information"
+  #       href: "https://gis.wrd.state.or.us/server/sdk/rest/index.html#/02ss00000029000000"
 
   USGS/Things:
     type: collection
