@@ -1,6 +1,7 @@
 {
     "@context": {
-      "@vocab": "https://schema.org/", 
+      "@vocab": "https://schema.org/",
+      "schema": "https://schema.org/",
       "xsd": "https://www.w3.org/TR/xmlschema-2/#",
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "dc": "http://purl.org/dc/terms/",
