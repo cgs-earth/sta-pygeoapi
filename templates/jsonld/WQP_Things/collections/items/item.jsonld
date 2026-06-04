@@ -22,7 +22,8 @@
     "@id": "{{ data['@id'] }}",
     "@type": [
       "hyf:HY_HydrometricFeature",
-      "hyf:HY_HydroLocation"
+      "hyf:HY_HydroLocation",
+      "Place"
     ],
     
     {%- if data['monitoringLocationType'] %}
